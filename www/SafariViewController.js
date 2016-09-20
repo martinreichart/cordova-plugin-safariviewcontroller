@@ -9,12 +9,12 @@ module.exports = {
     };
     exec(callback, errorHandler, "SafariViewController", "isAvailable", []);
   },
-  show: function (options) {
+  show: function (options, onSuccess, onError) {
     options = options || {};
     if (!options.hasOwnProperty('animated')) {
       options.animated = true;
     }
-    exec(null, null, "SafariViewController", "show", [options]);
+    exec(onSuccess, onError, "SafariViewController", "show", [options]);
   },
   hide: function (onSuccess, onError) {
     exec(onSuccess, onError, "SafariViewController", "hide", []);
