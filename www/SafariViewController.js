@@ -9,7 +9,7 @@ module.exports = {
     };
     exec(callback, errorHandler, "SafariViewController", "isAvailable", []);
   },
-  show: function (options, onSuccess, onError) {
+  show: function (onSuccess, onError, options) {
     options = options || {};
     if (!options.hasOwnProperty('animated')) {
       options.animated = true;
